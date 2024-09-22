@@ -1,0 +1,27 @@
+import os
+import requests
+
+def download_file(url, save_path):
+    # URL에서 파일을 다운로드
+    response = requests.get(url, stream=True)
+    
+    if response.status_code == 200:
+        with open(save_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=1024):
+                if chunk:
+                    f.write(chunk)
+        print(f"File downloaded successfully: {save_path}")
+    else:
+        print(f"Failed to download file. Status code: {response.status_code}")
+
+# 예시 사진 및 영상 URL (인스타그램 API에서 가져온 URL을 넣으세요)
+photo_url = 'https://example.com/photo.jpg'
+video_url = 'https://example.com/video.mp4'
+
+# 파일을 저장할 경로 (파일 확장자를 맞춰줘야 합니다)
+save_photo_path = 'downloaded_photo.jpg'
+save_video_path = 'downloaded_video.mp4'
+
+# 사진 및 영상 다운로드
+download_file(photo_url, save_photo_path)
+download_file(video_url, save_video_path)
