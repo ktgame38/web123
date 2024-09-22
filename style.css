@@ -21,4 +21,22 @@ body{
   #grid{
       display: grid;
       grid-template-columns: 200px 1fr;
-    }
+    } 
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Downloader</h1>
+        <input type="text" id="postLink" placeholder="게시물 링크 입력" />
+        <button id="downloadBtn">다운로드</button>
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
